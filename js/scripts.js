@@ -52,5 +52,14 @@ setTimeout(function(){
                 $(this).removeClass('animated pulse');
             });
         });
+        // company lift animation
+        $('.company-details-item').on('mouseover', function(){
+            $(this).children(".details").removeClass('dip-company').addClass('lift-company').end()
+                .children(".cool-line").removeClass("raise-line").addClass("sink-line");
+
+        }).on('mouseout', function(){
+            $(this).children(".details").removeClass('lift-company').addClass('dip-company').end()
+                .children(".cool-line").removeClass("sink-line").addClass("raise-line");;
+        });
     })();
 }, 2000);

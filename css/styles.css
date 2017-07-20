@@ -735,6 +735,8 @@ body{
         padding: 0px 58px;
         text-align: left;
     }
+    .company-details-item:hover{
+    }
     .company-details-item:last-child{
         border-right: 2px solid #c5c9cd;
     }
@@ -766,6 +768,13 @@ body{
         margin-top: 100%;
         max-width: none;
         display: block;
+    }
+    .company-details-item .details.lift-company h3,
+    .company-details-item .details.lift-company a{
+        color: #005d3d;
+    }
+    .company-details-item .details.lift-company p{
+        color: #404040;
     }
     .company-details-item .logo-wrapper{
         position: absolute;
@@ -812,6 +821,68 @@ body{
         animation-duration: 1s;
         -webkit-animation-timing-function: linear;
         animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .lift-company{
+        -webkit-animation-name: liftCompany;
+        animation-name: liftCompany;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .dip-company{
+        -webkit-animation-name: dipCompany;
+        animation-name: dipCompany;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .lift-company{
+        -webkit-animation-name: liftCompany;
+        animation-name: liftCompany;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .dip-company{
+        -webkit-animation-name: dipCompany;
+        animation-name: dipCompany;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .sink-line{
+        -webkit-animation-name: sinkLine;
+        animation-name: sinkLine;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-delay: .1s;
+        animation-delay: .1s;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .raise-line{
+        -webkit-animation-name: raiseLine;
+        animation-name: raiseLine;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
@@ -899,6 +970,75 @@ body{
         }
     }
 
+    @-webkit-keyframes liftCompany {
+        0% {
+            margin-top: 100%;
+        }
+        20% {
+            margin-top: 105%;
+        }
+        40% {
+            margin-top: 100%;
+        }
+        60% {
+            margin-top: 55%;
+        }
+        80% {
+            margin-top: 30%;
+        }
+        100% {
+            margin-top: 25%;
+        }
+    }
+    @keyframes liftCompany {
+        0% {
+            margin-top: 100%;
+        }
+        20% {
+            margin-top: 105%;
+        }
+        40% {
+            margin-top: 100%;
+        }
+        60% {
+            margin-top: 55%;
+        }
+        80% {
+            margin-top: 30%;
+        }
+        100% {
+            margin-top: 25%;
+        }
+    }
+
+    @-webkit-keyframes dipCompany {
+        from {margin-top: 25%;}
+        to {margin-top: 100%;}
+    }
+    @keyframes dipCompany {
+        from {margin-top: 25%;}
+        to {margin-top: 100%;}
+    }
+
+    @-webkit-keyframes sinkLine {
+        0% { transform: translateY(0px); width: 20px; }
+        50% { transform: translateY(6px); width: 0px; background-color: #005d3d;}
+        100% { transform: translateY(12px); width: 20px; background-color: #005d3d;}
+    }
+    @keyframes sinkLine {
+        0% { transform: translateY(0px); width: 20px; }
+        50% { transform: translateY(6px); width: 0px; background-color: #005d3d;}
+        100% { transform: translateY(12px); width: 20px; background-color: #005d3d;}
+    }
+
+    @-webkit-keyframes raiseLine {
+        from { transform: translateY(12px) }
+        to { transform: translateY(0px) }
+    }
+    @keyframes raiseLine {
+        from { transform: translateY(12px) }
+        to { transform: translateY(0px) }
+    }
 }
 @media (min-width: 1200px) {
     .about-contents h2 {
