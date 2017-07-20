@@ -220,23 +220,20 @@ body{
     width: auto;
 }
 .company-title{
-    width: 20vw;
-    height: 68vh;
     text-align: center;
     font-family: 'NationalLight', Arial, sans-serif;
     color: #005d3d;
 }
 .company-title h2{
     font-size: 30px;
+    margin-top: 0px;
 }
 .company-details-item{
-    height: 76vh;
-    border-left: 2px solid #c5c9cd;
-    width: 262px;
-    padding: 0px 58px;
+    padding: 0px 20px;
+    position: relative;
+    text-align: center;
 }
 .company-details-item:last-child{
-    border-right: 2px solid #c5c9cd;
 }
 .company-details-item h3{
     font-family: 'NationalBook', Arial, sans-serif;
@@ -260,9 +257,32 @@ body{
 .company-details-item .cool-line{
     width: 20px;
     background-color: #c5c9cd;
+    display: inline-block;
 }
 .company-details-item .details{
-    margin-top: 100%;
+    max-width: 250px;
+    display: inline-block;
+}
+.company-details-item .logo-wrapper{
+    width: 262px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.company-details-item img{
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+}
+.company-details-item .img-100{
+    width: 100%;
+}
+.company-details-item .img-80{
+    width: 80%;
+}
+.company-details-item .img-70{
+    width: 70%;
 }
 
 /* customising the animate.css animations */
@@ -596,6 +616,9 @@ body{
     body{
         overflow-y: hidden; /* this is required */
     }
+    .hidden-md-above{
+        display:none;
+    }
     .mobile-logo-holder {
         left: auto;
         right: 0px;
@@ -694,6 +717,81 @@ body{
     }
     .testimonails .author {
         font-size: 16px;
+    }
+
+    /*company section*/
+    .company-title{
+        width: 20vw;
+        height: 68vh;
+    }
+    .company-title h2{
+        font-size: 30px;
+        margin-top: 25px;
+    }
+    .company-details-item{
+        height: 76vh;
+        border-left: 2px solid #c5c9cd;
+        width: 262px;
+        padding: 0px 58px;
+        text-align: left;
+    }
+    .company-details-item:last-child{
+        border-right: 2px solid #c5c9cd;
+    }
+    .company-details-item h3{
+        font-family: 'NationalBook', Arial, sans-serif;
+        color: #9098a0;
+        font-size: 26px;
+    }
+    .company-details-item p {
+        font-family: 'NationalLight', Arial, sans-serif;
+        font-size: 18px;
+        color: #9098a0;
+        position: relative;
+        letter-spacing: 0.2px;
+        line-height: 25px;
+    }
+    .company-details-item a{
+        font-family: 'NationalLight', Arial, sans-serif;
+        text-decoration: none;
+        color: #9098a0;
+        font-size: 14px;
+    }
+    .company-details-item .cool-line{
+        width: 20px;
+        background-color: #c5c9cd;
+        display: block;
+    }
+    .company-details-item .details{
+        margin-top: 100%;
+        max-width: none;
+        display: block;
+    }
+    .company-details-item .logo-wrapper{
+        position: absolute;
+        top: auto;
+        left: 0px;
+        width: 262px;
+        bottom: 40px;
+        padding: 0px 58px;
+        display: block;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: left;
+    }
+    .company-details-item img{
+        margin: 0 auto;
+        display: block;
+        width: 80%;
+    }
+    .company-details-item .img-100{
+        width: 100%;
+    }
+    .company-details-item .img-80{
+        width: 80%;
+    }
+    .company-details-item .img-70{
+        width: 70%;
     }
 
     /*animation classes*/
