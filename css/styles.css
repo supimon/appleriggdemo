@@ -233,8 +233,6 @@ body{
     position: relative;
     text-align: center;
 }
-.company-details-item:last-child{
-}
 .company-details-item h3{
     font-family: 'NationalBook', Arial, sans-serif;
     color: #9098a0;
@@ -283,6 +281,65 @@ body{
 }
 .company-details-item .img-70{
     width: 70%;
+}
+
+/*board section*/
+.gallery-content-holder{
+    display: none;
+}
+.child-section.board{
+    background-color: #f0f0ee;
+}
+.gallery{
+    padding: 1px 0px;
+}
+.gallery .title-position{
+    display: none;
+}
+.gallery h3,
+.gallery p{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.gallery h2{
+    font-family: 'NationalLight', Arial, sans-serif;
+    color: #005d3d;
+    font-size: 30px;
+    text-align: center;
+}
+.gallery h3{
+    font-family: 'NationalBook', Arial, sans-serif;
+    color: #005d3d;
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+.gallery p{
+    font-size: 14px;
+    line-height: 23px;
+    font-family: 'Fei', Georgia, serif;
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+.board .details{
+    display: none;
+}
+.board .details > *{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.board .details h3{
+    font-family: 'NationalLight', Arial, sans-serif;
+    color: #005d3d;
+    font-size: 26px;
+    margin-top: 23.6%;
+}
+.board .details p{
+    font-family: 'NationalLight', Arial, sans-serif;
+    font-size: 18px;
+    color: #404040;
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 25px;
 }
 
 /* customising the animate.css animations */
@@ -725,7 +782,6 @@ body{
         height: 68vh;
     }
     .company-title h2{
-        font-size: 30px;
         margin-top: 25px;
     }
     .company-details-item{
@@ -734,35 +790,6 @@ body{
         width: 262px;
         padding: 0px 58px;
         text-align: left;
-    }
-    .company-details-item:hover{
-    }
-    .company-details-item:last-child{
-        border-right: 2px solid #c5c9cd;
-    }
-    .company-details-item h3{
-        font-family: 'NationalBook', Arial, sans-serif;
-        color: #9098a0;
-        font-size: 26px;
-    }
-    .company-details-item p {
-        font-family: 'NationalLight', Arial, sans-serif;
-        font-size: 18px;
-        color: #9098a0;
-        position: relative;
-        letter-spacing: 0.2px;
-        line-height: 25px;
-    }
-    .company-details-item a{
-        font-family: 'NationalLight', Arial, sans-serif;
-        text-decoration: none;
-        color: #9098a0;
-        font-size: 14px;
-    }
-    .company-details-item .cool-line{
-        width: 20px;
-        background-color: #c5c9cd;
-        display: block;
     }
     .company-details-item .details{
         margin-top: 100%;
@@ -788,19 +815,75 @@ body{
         margin-bottom: 0px;
         text-align: left;
     }
-    .company-details-item img{
-        margin: 0 auto;
+
+    /*board section*/
+    .gallery-details{
+        display: none;
+    }
+    .child-section.board{
+        width: 100vw;
+        background-color: #f0f0ee;
+    }
+    .gallery{
+        width: 50%;
+        height: 100vh;
+        padding: 0px;
+    }
+    .gallery > *{
+        margin-left: 20%;
+        margin-right: 10%;
+    }
+    .gallery .title-position{
         display: block;
-        width: 80%;
     }
-    .company-details-item .img-100{
-        width: 100%;
+    .gallery h2{
+        font-family: 'NationalLight', Arial, sans-serif;
+        color: #005d3d;
+        font-size: 30px;
+        margin-top: 23.6%;
+        text-align: left;
     }
-    .company-details-item .img-80{
-        width: 80%;
+    .gallery h3{
+        font-family: 'NationalBook', Arial, sans-serif;
+        color: #005d3d;
+        font-size: 26px;
+        margin-bottom: 14px;
     }
-    .company-details-item .img-70{
-        width: 70%;
+    .gallery p{
+        font-size: 14px;
+        line-height: 23px;
+        font-family: 'Fei', Georgia, serif;
+        margin-top: 0px;
+        margin-bottom: 6px;
+    }
+    .gallery h3, .gallery p {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .board .details{
+        display: block;
+        width: 50%;
+        height: 100vh;
+    }
+    .board .details .person-intro{
+        margin-top: 23.6%;
+    }
+    .board .details h3{
+        font-family: 'NationalLight', Arial, sans-serif;
+        color: #005d3d;
+        font-size: 26px;
+    }
+    .board .details p{
+        font-family: 'NationalLight', Arial, sans-serif;
+        font-size: 18px;
+        color: #404040;
+        position: relative;
+        letter-spacing: 0.2px;
+        line-height: 25px;
+    }
+    .board .details > *{
+        margin-left: 10%;
+        margin-right: 17%;
     }
 
     /*animation classes*/
@@ -1062,6 +1145,11 @@ body{
     .testimonails h2 {
         font-size: 41px;
         line-height: 30px;
+    }
+
+    .board .details > *{
+        margin-left: 10%;
+        margin-right: 29%;
     }
 }
 @media (min-width: 1600px) {
