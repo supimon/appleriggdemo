@@ -1,5 +1,5 @@
 /**
- * Created by supimon on 17/July/17.
+ * Created by supimon on 18/July/17.
  */
 
 @font-face {
@@ -28,6 +28,20 @@ body{
 }
 .green{
     background-color: #005d3d;
+}
+.mobile-logo-holder{
+    padding-top: 28px;
+    padding-bottom: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    margin: 0px;
+}
+.section-slider{
+    display: none;
 }
 
 /* main menu section */
@@ -58,7 +72,7 @@ body{
     flex-shrink: 0;
 }
 .basis-97{
-    flex-basis: 97%;
+    flex-basis: 100%;
 }
 .basis-0{
     flex-basis: 0%;
@@ -97,11 +111,17 @@ body{
     overflow: hidden;
 }
 .about-contents{
-    margin-bottom: 50px;
-    margin-top: 29px;
+    margin-bottom: 80px;
+    margin-top: 77px;
+}
+.mobile-logo{
+    width: 22%;
+    display: block;
+    margin: 0 auto;
+    min-width: 186px;
 }
 .about-contents .cool-line {
-    margin: 20px;
+    margin: 32px 20px 20px 20px;
 }
 .about-contents h2{
     transform: translateY(100%);
@@ -125,12 +145,18 @@ body{
 .about-contents > p,
 .about-title > *,
 .testimonails h2,
-.testimonails ul {
+.testimonails .slide-indicator-ul {
     margin: 20px;
 }
 .about-title{
     opacity: 0;
     transform: translateY(100%);
+    text-align: center;
+}
+.about-title img{
+    width: 14%;
+    margin-top: 24px;
+    max-width: 77px;
 }
 .testimonails{
     color: grey;
@@ -155,156 +181,88 @@ body{
     color: #005d3d;
     font-family: 'NationalLight', Arial, sans-serif;
 }
-.testimonails ul{
+.slide-indicator-ul{
     padding: 0px;
 }
-.testimonails ul li{
+.slide-indicator-ul li{
     display: inline-block;
     margin: 0px;
     padding: 0px;
-    width: 14px;
+    width: 30px;
     height: 7px;
+    position: relative;
 }
-.testimonails ul li:last-child:after{
-    content: ' ';
+.slide-indicator-ul li:before{
+    content: " ";
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 30px;
+    height: 1px;
+    background-color: grey;
+}
+.slide-indicator-ul li:last-child:before{
     width: 0px;
 }
-.testimonails ul li a{
+.slide-indicator-ul li a{
     display: inline-block;
     width: 7px;
     border-radius: 4px;
     height: 100%;
     background-color: grey;
 }
-.big-letter{
-
+.slide-indicator-ul li.is-active a{
+    background-color: #005d3d;
 }
 
-@media (min-width: 579px) {
-
+/*company section*/
+.child-section.company{
+    width: auto;
 }
-@media (min-width: 768px) {
-
+.company-title{
+    width: 20vw;
+    height: 68vh;
+    text-align: center;
+    font-family: 'NationalLight', Arial, sans-serif;
+    color: #005d3d;
 }
-@media (min-width: 992px) {
-    body{
-        overflow-y: hidden; /* this is required */
-    }
-    .body-contents{
-        height: 100vh;
-        width: 400vw;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    .child-section{
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .child-section.about{
-        width: 80vw;
-    }
-    .about-contents{
-        width: 60%;
-        order: 2;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    .about-contents .cool-line {
-        margin: 0px;
-    }
-    .about-contents h2 {
-        font-size: 24px;
-        line-height: 36px;
-        margin-top: 35px;
-        margin-bottom: 30px;
-    }
-    .about-contents > p {
-        font-size: 17px;
-        line-height: 23px;
-    }
-    .about-contents > h2,
-    .about-contents > p{
-        margin-right: 19%;
-        margin-left: 0px;
-    }
-    .about-title{
-        width: 40%;
-        order: 1;
-    }
-    .testimonails{
-        margin-bottom: 0px;
-    }
-    .about-title > *,
-    .testimonails h2,
-    .testimonails ul {
-        margin-left: 28%;
-        margin-right: 14%;
-    }
-    .testimonails p {
-        font-size: 13px;
-        line-height: 22px;
-    }
-    .testimonails h2 {
-        font-size: 40px;
-        line-height: 20px;
-    }
-    .testimonails .author {
-        font-size: 16px;
-    }
-
+.company-title h2{
+    font-size: 30px;
 }
-@media (min-width: 1200px) {
-    .about-contents h2 {
-        font-size: 30px;
-        line-height: 42px;
-    }
-    .about-contents > p {
-        font-size: 18px;
-        line-height: 26px;
-    }
-    .about-title > *,
-    .testimonails h2,
-    .testimonails ul {
-        margin-left: 33%;
-        margin-right: 19%;
-    }
-    .testimonails p {
-        font-size: 14px;
-        line-height: 23px;
-    }
-    .testimonails h2 {
-        font-size: 41px;
-        line-height: 30px;
-    }
+.company-details-item{
+    height: 76vh;
+    border-left: 2px solid #c5c9cd;
+    width: 262px;
+    padding: 0px 58px;
 }
-@media (min-width: 1600px) {
-    .about-contents h2{
-        font-size: 34px;
-        line-height: 51px;
-    }
-    .about-contents > p {
-        font-size: 20px;
-        line-height: 28px;
-    }
-    .about-title > *,
-    .testimonails h2,
-    .testimonails ul {
-        margin-left: 39%;
-    }
-    .testimonails p {
-        font-size: 16px;
-        line-height: 27px;
-    }
-    .testimonails h2 {
-        font-size: 54px;
-    }
-    .testimonails .author {
-        font-size: 20px;
-    }
+.company-details-item:last-child{
+    border-right: 2px solid #c5c9cd;
+}
+.company-details-item h3{
+    font-family: 'NationalBook', Arial, sans-serif;
+    color: #9098a0;
+    font-size: 26px;
+}
+.company-details-item p {
+    font-family: 'NationalLight', Arial, sans-serif;
+    font-size: 18px;
+    color: #9098a0;
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+}
+.company-details-item a{
+    font-family: 'NationalLight', Arial, sans-serif;
+    text-decoration: none;
+    color: #9098a0;
+    font-size: 14px;
+}
+.company-details-item .cool-line{
+    width: 20px;
+    background-color: #c5c9cd;
+}
+.company-details-item .details{
+    margin-top: 100%;
 }
 
 /* customising the animate.css animations */
@@ -315,6 +273,10 @@ body{
 .flipOutX{
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+.pulse{
     -webkit-animation-duration: 0.3s;
     animation-duration: 0.3s;
 }
@@ -364,7 +326,7 @@ body{
 /* animations */
 @-webkit-keyframes expandMenu {
     0% {
-        flex-basis: 97%;
+        flex-basis: 100%;
     }
     5% {
         flex-basis: 94%;
@@ -384,7 +346,7 @@ body{
 }
 @keyframes expandMenu {
     0% {
-        flex-basis: 97%;
+        flex-basis: 100%;
     }
     5% {
         flex-basis: 94%;
@@ -420,7 +382,7 @@ body{
         flex-basis: 95%;
     }
     100% {
-        flex-basis: 97%;
+        flex-basis: 100%;
     }
 }
 @keyframes collapseMenu {
@@ -440,7 +402,7 @@ body{
         flex-basis: 95%;
     }
     100% {
-        flex-basis: 97%;
+        flex-basis: 100%;
     }
 }
 
@@ -476,5 +438,416 @@ body{
     }
     100% {
         width: 5%;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/*!
+ * Mobile Menu animation
+ * credits to Jesse Couch
+ * https://codepen.io/designcouch/pen/Atyop
+ */
+#nav-icon1{
+    width: 25px;
+    height: 20px;
+    position: fixed;
+    top: 28px;
+    left: 20px;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    z-index: 4;
+}
+#nav-icon1 span{
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #005d3d;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+#nav-icon1 span:nth-child(1) {
+    top: 0px;
+}
+#nav-icon1 span:nth-child(2) {
+    top: 8px;
+}
+#nav-icon1 span:nth-child(3) {
+    top: 16px;
+}
+#nav-icon1.open span:nth-child(1) {
+    top: 8px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+#nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+#nav-icon1.open span:nth-child(3) {
+    top: 8px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+/*!
+ * Desktop menu animation
+ * credits Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+    padding: 0px;
+    display: none;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    top: 47%;
+    right: 4px;
+    left: auto;
+    z-index: 4;
+    width: 22px;
+}
+.hamburger:hover {
+    opacity: 0.7; }
+.hamburger-box {
+    width: 100%;
+    height: 24px;
+    display: inline-block;
+    position: relative; }
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+.hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+.hamburger-inner::before {
+    top: -10px; }
+.hamburger-inner::after {
+    bottom: -10px; }
+.hamburger--arrow.open .hamburger-inner::before {
+    transform: translate3d(-5px, 5px, 0) rotate(-45deg) scale(0.7, 1);
+}
+.hamburger--arrow.open .hamburger-inner::after {
+    transform: translate3d(-4px, -4px, 0) rotate(45deg) scale(0.7, 1);
+}
+
+/*media queries*/
+@media (min-width: 579px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+    body{
+        overflow-y: hidden; /* this is required */
+    }
+    .mobile-logo-holder {
+        left: auto;
+        right: 0px;
+        width: 20%;
+        background-color: transparent;
+    }
+    .basis-97{
+        flex-basis: 97%;
+    }
+    .hamburger {
+        display: inline-block;
+    }
+    #nav-icon1{
+        display: none;
+    }
+    .body-contents{
+        height: 100vh;
+        width: 440vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .child-section{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .child-section.about{
+        width: 80vw;
+    }
+    .section-slider{
+        display: inline-block;
+        width: 200px;
+        position: fixed;
+        top: auto;
+        left: auto;
+        right: 0px;
+        bottom: 20px;
+    }
+
+    /*about section*/
+    .about-contents{
+        width: 60%;
+        order: 2;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .about-contents .cool-line {
+        margin: 0px;
+    }
+    .about-contents h2 {
+        font-size: 24px;
+        line-height: 36px;
+        margin-top: 35px;
+        margin-bottom: 30px;
+    }
+    .about-contents > p {
+        font-size: 17px;
+        line-height: 23px;
+    }
+    .about-contents > h2,
+    .about-contents > p{
+        margin-right: 19%;
+        margin-left: 0px;
+    }
+    .about-title{
+        width: 40%;
+        order: 1;
+        text-align: left;
+    }
+    .about-title img{
+        width: 22%;
+        margin-top: 34px;
+    }
+    .testimonails{
+        margin-bottom: 0px;
+    }
+    .about-title > *,
+    .testimonails h2,
+    .testimonails .slide-indicator-ul {
+        margin-left: 28%;
+        margin-right: 14%;
+    }
+    .slide-indicator-ul li:before {
+        left: 7px;
+    }
+    .testimonails p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+    .testimonails h2 {
+        font-size: 40px;
+        line-height: 20px;
+    }
+    .testimonails .author {
+        font-size: 16px;
+    }
+
+    /*animation classes*/
+    .expand-menu{
+        -webkit-animation-name: expandMenu;
+        animation-name: expandMenu;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    .collapse-menu{
+        -webkit-animation-name: collapseMenu;
+        animation-name: collapseMenu;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    /*animations*/
+    @-webkit-keyframes expandMenu {
+        0% {
+            flex-basis: 97%;
+        }
+        5% {
+            flex-basis: 94%;
+        }
+        60% {
+            flex-basis: 95.4%;
+        }
+        75% {
+            flex-basis: 7%;
+        }
+        80%{
+            flex-basis: 2%;
+        }
+        100% {
+            flex-basis: 0%;
+        }
+    }
+    @keyframes expandMenu {
+        0% {
+            flex-basis: 97%;
+        }
+        5% {
+            flex-basis: 94%;
+        }
+        60% {
+            flex-basis: 95.4%;
+        }
+        75% {
+            flex-basis: 7%;
+        }
+        80%{
+            flex-basis: 2%;
+        }
+        100% {
+            flex-basis: 0%;
+        }
+    }
+
+    @-webkit-keyframes collapseMenu {
+        0% {
+            flex-basis: 0%;
+        }
+        5% {
+            flex-basis: 3%;
+        }
+        60% {
+            flex-basis: 2.6%;
+        }
+        75% {
+            flex-basis: 90%;
+        }
+        80%{
+            flex-basis: 95%;
+        }
+        100% {
+            flex-basis: 97%;
+        }
+    }
+    @keyframes collapseMenu {
+        0% {
+            flex-basis: 0%;
+        }
+        5% {
+            flex-basis: 3%;
+        }
+        60% {
+            flex-basis: 2.6%;
+        }
+        75% {
+            flex-basis: 90%;
+        }
+        80%{
+            flex-basis: 95%;
+        }
+        100% {
+            flex-basis: 97%;
+        }
+    }
+
+}
+@media (min-width: 1200px) {
+    .about-contents h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .about-contents > p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .about-title > *,
+    .testimonails h2,
+    .testimonails .slide-indicator-ul {
+        margin-left: 33%;
+        margin-right: 19%;
+    }
+    .testimonails p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+    .testimonails h2 {
+        font-size: 41px;
+        line-height: 30px;
+    }
+}
+@media (min-width: 1600px) {
+    .about-contents h2{
+        font-size: 34px;
+        line-height: 51px;
+    }
+    .about-contents > p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .about-title > *,
+    .testimonails h2,
+    .testimonails .slide-indicator-ul {
+        margin-left: 39%;
+    }
+    .testimonails p {
+        font-size: 16px;
+        line-height: 27px;
+    }
+    .testimonails h2 {
+        font-size: 54px;
+    }
+    .testimonails .author {
+        font-size: 20px;
     }
 }
