@@ -22,6 +22,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 .cool-line{
     height: 1px;
@@ -42,6 +43,9 @@ body{
 }
 .section-slider{
     display: none;
+}
+.block-vertical-scroll{
+    overflow-y: hidden;
 }
 
 /* main menu section */
@@ -296,8 +300,8 @@ body{
 .gallery .title-position{
     display: none;
 }
-.gallery h3,
-.gallery p{
+.title-position h3,
+.title-position p{
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -307,13 +311,13 @@ body{
     font-size: 30px;
     text-align: center;
 }
-.gallery h3{
+.title-position h3{
     font-family: 'NationalBook', Arial, sans-serif;
     color: #005d3d;
     font-size: 26px;
     margin-bottom: 14px;
 }
-.gallery p{
+.title-position p{
     font-size: 14px;
     line-height: 23px;
     font-family: 'Fei', Georgia, serif;
@@ -323,23 +327,57 @@ body{
 .board .details{
     display: none;
 }
-.board .details > *{
+.person-intro > *{
     margin-left: 20px;
     margin-right: 20px;
 }
-.board .details h3{
+.person-intro h3{
     font-family: 'NationalLight', Arial, sans-serif;
     color: #005d3d;
     font-size: 26px;
     margin-top: 23.6%;
 }
-.board .details p{
+.person-intro p{
     font-family: 'NationalLight', Arial, sans-serif;
     font-size: 18px;
     color: #404040;
     position: relative;
     letter-spacing: 0.2px;
     line-height: 25px;
+}
+/*mobile gallery popup*/
+.gallery-details{
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 70px);
+    top: 70px;
+    left: 0px;
+    z-index: 1;
+    overflow-y: scroll;
+    background-color: #f0f0ee;
+    transform: translate3d(300%, 0, 0);
+}
+.gallery-details .close{
+    position: fixed;
+    top: 74px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color: #005d3d;
+    font-size: 30px;
+    text-align: center;
+    display: none;
+}
+.gallery-details .title-position{
+    text-align: center;
+}
+.gallery-details .img-holder{
+    text-align: center;
+}
+.gallery-details img{
+    width: 100%;
+    display: inline-block;
+    max-width: 350px;
 }
 
 /* customising the animate.css animations */
@@ -394,6 +432,26 @@ body{
     animation-duration: 1s;
     -webkit-animation-delay: 3s;
     animation-delay: 3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.show-details-mobile{
+    -webkit-animation-name: showDetailsMobile;
+    animation-name: showDetailsMobile;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.hide-details-mobile{
+    -webkit-animation-name: hideDetailsMobile;
+    animation-name: hideDetailsMobile;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     -webkit-animation-fill-mode: forwards;
@@ -529,6 +587,90 @@ body{
 
     to {
         transform: scale3d(1, 1, 1);
+    }
+}
+
+@-webkit-keyframes showDetailsMobile {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    from {
+        opacity: 0;
+        transform: translate3d(300%, 0, 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(10px, 0, 0);
+    }
+
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    to {
+        transform: none;
+    }
+}
+@keyframes showDetailsMobile {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    from {
+        opacity: 0;
+        transform: translate3d(300%, 0, 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(10px, 0, 0);
+    }
+
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes hideDetailsMobile {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    20% {
+        opacity: 1;
+        transform: translate3d(-20px, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(300%, 0, 0);
+    }
+}
+@keyframes hideDetailsMobile {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    20% {
+        opacity: 1;
+        transform: translate3d(-20px, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(300%, 0, 0);
     }
 }
 
@@ -671,6 +813,7 @@ body{
 }
 @media (min-width: 992px) {
     body{
+        overflow-x: scroll;
         overflow-y: hidden; /* this is required */
     }
     .hidden-md-above{
@@ -843,20 +986,21 @@ body{
         margin-top: 23.6%;
         text-align: left;
     }
-    .gallery h3{
+    .title-position h3{
         font-family: 'NationalBook', Arial, sans-serif;
         color: #005d3d;
         font-size: 26px;
         margin-bottom: 14px;
     }
-    .gallery p{
+    .title-position p{
         font-size: 14px;
         line-height: 23px;
         font-family: 'Fei', Georgia, serif;
         margin-top: 0px;
         margin-bottom: 6px;
     }
-    .gallery h3, .gallery p {
+    .title-position h3,
+    .title-position p {
         margin-left: 0px;
         margin-right: 0px;
     }
@@ -868,12 +1012,12 @@ body{
     .board .details .person-intro{
         margin-top: 23.6%;
     }
-    .board .details h3{
+    .person-intro h3{
         font-family: 'NationalLight', Arial, sans-serif;
         color: #005d3d;
         font-size: 26px;
     }
-    .board .details p{
+    .person-intro p{
         font-family: 'NationalLight', Arial, sans-serif;
         font-size: 18px;
         color: #404040;
@@ -881,7 +1025,7 @@ body{
         letter-spacing: 0.2px;
         line-height: 25px;
     }
-    .board .details > *{
+    .person-intro > *{
         margin-left: 10%;
         margin-right: 17%;
     }
@@ -1146,10 +1290,9 @@ body{
         font-size: 41px;
         line-height: 30px;
     }
-
     .board .details > *{
-        margin-left: 10%;
-        margin-right: 29%;
+        margin-left: 4%;
+        margin-right: 12%;
     }
 }
 @media (min-width: 1600px) {
@@ -1175,5 +1318,9 @@ body{
     }
     .testimonails .author {
         font-size: 20px;
+    }
+    .board .details > *{
+        margin-left: 10%;
+        margin-right: 22%;
     }
 }
